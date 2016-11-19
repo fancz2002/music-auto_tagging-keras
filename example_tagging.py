@@ -1,3 +1,5 @@
+import tensorflow as tf
+tf.python.control_flow_ops = tf
 import time
 import numpy as np
 from keras import backend as K
@@ -37,7 +39,7 @@ def main(net):
                      'data/bensound-actionable.npy',
                      'data/bensound-dubstep.npy',
                      'data/bensound-thejazzpiano.npy']
-
+'''
     tags = ['rock', 'pop', 'alternative', 'indie', 'electronic',
             'female vocalists', 'dance', '00s', 'alternative rock', 'jazz',
             'beautiful', 'metal', 'chillout', 'male vocalists',
@@ -49,6 +51,7 @@ def main(net):
             'sexy', 'catchy', 'funk', 'electro', 'heavy metal',
             'Progressive rock', '60s', 'rnb', 'indie pop',
             'sad', 'House', 'happy']
+'''
 
     # prepare data like this
     melgrams = np.zeros((0, 1, 96, 1366))
@@ -86,6 +89,6 @@ def main(net):
 
 if __name__ == '__main__':
 
-    networks = ['cnn', 'crnn']
+    networks = ['crnn']
     for net in networks:
         main(net)
